@@ -81,12 +81,10 @@ function getQuestion(obj,count) {
       //  create answer radioInput element .....
       let radioInput = document.createElement('input');
       radioInput.type="radio";
+      radioInput.required=true;
       radioInput.name="answers";
       radioInput.id=`answer-${i}`
       radioInput.dataset.answer = obj[`answer_${i}`];
-      if (i==1) {
-        radioInput.checked = true;
-      }
       radioInput.onchange = (e)=>{
         choosenAnswer = radioInput.dataset.answer;
       }
@@ -135,7 +133,7 @@ function handleBulets(count) {
 // Add CountDown To Element ......
 function addcountDown(duration,count) {
   if (currentQuestion < count) {
-    duration *= 60;
+    duration = duration * count * 60;
     let minutes, seconds;
     countdownInterval = setInterval(function () {
       minutes = parseInt(duration / 60);
