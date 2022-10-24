@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    font-family: 'Cairo', sans-serif;
+}
+:root{
+    --main-clr: #00bcd4;
+}
+body{
+    width: 100%;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+.quizapp-sec{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid #d4d4d4;
+    padding: 20px;
+    width: 600px;
+}
+.quizapp-sec .category-questionnum {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.quizapp-sec .category-questionnum .category{
+    border: 1px solid black;
+    padding: 10px 20px;
+}
+.quizapp-sec .category-questionnum span{
+    font-size: large;
+    font-weight: 600;
+}
+.quizapp-sec .category-questionnum .question-num{
+    border: 1px solid black;
+    padding: 10px 20px;
+    background-color: var(--main-clr);
+    color: white;
+    font-size: large;
+    font-weight: 600;
+}
+.question-sec{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: #eee;
+}
+.question-sec .question{
+    display: block;
+}
+.question-sec .question.active{
+    display: block;
+}
+.question-sec .question-title{
+    width: 100%;
+    text-align: start;
+    padding: 20px;
+    border-bottom: 1px solid #c7c7c7;
+    font-size: 25px;
+}
+.question-sec .answers{
+    padding: 20px 20px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.question-sec input[type="radio"]{
+    margin-right: 10px;
+    cursor: pointer;
+}
+.question-sec input[type="radio"]:checked ~ label{
+    color: var(--main-clr);
+}
+.question-sec label{
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.558);
+}
+.question-sec label:hover{
+    color: black;
+}
+button{
+    width: 100%;
+    height: 40px;
+    background-color: var(--main-clr);
+    border: none;
+    outline: none;
+    color: white;
+    font-size: larger;
+    cursor: pointer;
+}
+button:hover{
+    background-color: rgba(0, 0, 0, 0.293);
+}
+.quizapp-sec .count-down{
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.quizapp-sec .count-down .bulets{
+    display: flex;
+    gap: 1px;
+}
+.quizapp-sec .count-down .bulets span{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(210, 210, 210);
+    display: inline-block;
+    border-radius: 50%;
+}
+.quizapp-sec .count-down .bulets span.active{
+    background-color: var(--main-clr);
+}
+.quizapp-sec .count-down .count-down-show{
+    border: 1px solid black;
+    padding: 10px 20px;
+    background-color: var(--main-clr);
+    color: white;
+    font-size: large;
+    font-weight: 600;
+}
+.quizapp-sec .result-sec{
+    height: 0px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 2s;
+    -webkit-transition: all 2s;
+    -moz-transition: all 2s;
+    -ms-transition: all 2s;
+    -o-transition: all 2s;
+}
+.quizapp-sec .result-sec.active{
+    height: auto;
+}
